@@ -1,0 +1,113 @@
+## General Description
+
+[x] - A program executable from the command line:
+Ex. 
+  ruby ./solution.rb texts/moby_dick.txt
+
+[x] - will return 100 of most common three word sequences in descending order of frequency.
+
+  RESPONSE - My is implemented in a way that is reads three words consecutively then proceeds to start
+    then next grouping at the starting index of the sequence +1.
+    EX.
+      'the sperm whale - 85'
+      'sperm whale swims - 56'
+      'whale swims away - 34'
+Ex. 
+  'the sperm whale - 85'
+  'the white whale - 71'
+  'of the whale - 67'
+## Basic Requirements
+
+[x] - The program accepts a list of one *or more* file paths 
+[x] - The program *also* accepts input via stdin (e.g. `cat texts/*.txt | java solution.java`).
+[x] - The program outputs the first 100 most common three word sequences.
+[x] - The program ignores punctuation, line endings, and is case insensitive
+   Ex. `“I love\nsandwiches.”` should be treated the same as `"(I LOVE SANDWICHES!!)"`).
+[x] - Contractions shouldn't be changed into two words (eg. `can't` should not become `can t`).
+[x] - Hyphens on line-endings can be treated as continuations OR punctuation.
+
+  RESPONSE - hyphens are currently ignored. Due to time constrains. 
+
+[x] - Unicode may also be handled in any way you like (including replacing it with a space)
+
+  RESPONSE - The code treats everything other than lower case letters 
+    and the two versions of apostrophes as blank spaces 
+
+## Documentation Requirements
+
+* Your README should include:
+[x] - How to run your program.
+[x] - How to run the tests.
+[x] - What you would do next, given more time (if anything)?
+[x] - Are there bugs that you are aware of?
+
+## Testing Requirements
+
+[x] - The program should have automated tests that use assertions.
+[x] - The program should have documentation about how to run the program AND the tests.
+[x] - Tests should be runnable on the evaluator's machine with small effort.
+  RESPONSE - Hopefully!
+[x] - Tests should cover the important, public parts of the program.
+[x] - Bonus points for doing something extra and documenting it. 
+[x] - Here are some examples that might be relevant to the team you're applying to:
+  [] - The tests clearly demonstrate both functional *and* unit style testing.
+  [x] - The tests cover boundary conditions and positive/negative tests.
+  [x] - In addition to the main body of tests, the tests *also* cover other exploratory styles of testing such as fuzzing.
+  [x] - Something else that you think your team would find valuable (just make sure to document it so we know to look for it!)
+
+## Code Structure/Style Requirements
+
+* The program should be well structured and understandable.
+[x] - Encapsulation
+[x] - Separation of concerns
+[x] - Understandability
+[x] - Appropriate use of data structures for the language of choice
+
+EXTRA!!!
+
+[x] - Please show us what _you_ think makes a program beautiful and understandable. In exchange, 
+we'll try to open our minds and learn from you.
+
+  RESPONSE - I think that beautiful code is code that is easily read and not overly complicated. It also loosely coupled
+    as possible and is easy to change! I do not have much experience under my belt but I tried to emulate my code
+    based on Sandy Metz book of OOP. I tried to keep many classes and methods with a single responsibility as much
+    as I could. In a program as this it is easier to implement, ex. dependancy injection of classes
+    as option arguments in the init method of the class that needs it. Yet, as an application grows, it could be 
+    harder to mantain.
+
+[x] - There are also many bonus points you can earn in this category, but as with the previous categories, 
+  if you do attempt bonus points in this category, please document what you did 
+  that's extra special so we can properly appreciate it.
+
+  RESPONSE - I started my program as a functional program but wanted to have more practice on OOP so decided to give it
+    a shot!
+    Additionally, the counter function was developed as a bigO(n)! As it currently stands, the Moby Dick file takes about
+    1 second to complete. I am using a MacBook Air 15GB of Memory 1.6 GHz Dual-Core Intel Core i5. I left a Time.now call 
+    on the main caller class to make it easier for you to test! This was not part of my code. 
+    My thoughts on improving the speed could by potentially handling the RegEx or the loading of each line from ARGF
+    differently. I have read but I am not too sure that RegEx might not be fast in certain situations, and calling them
+    on individual lines as my method those might not be the fastest way of doing it.
+    
+
+LIMITATIONS
+- Words like www are created by ignoring punctuation
+- range might not work on all ruby versions arr[i..j]. It does not run on REPL
+- Not accounting for index of book etc.
+- Decided to go with punctuation for hyphens due to lack of time. Per requirement above, it will be ignored
+  this could potentially chop unfinished words or hyphenated words. Ex. co-founder => ['co','founder']
+- ARGF with blank value will hang on the terminal needing it to be escaped with `control + c`.
+
+FUTURE ITERATIONS
+-  Handling Errors (Rescuing wrong values, passing the wrong file etc.)
+- Implement a more user friendly experience such as, if the user forgot a file argument, perhaps
+  enter a loop to 'gets' the path from them and reading it.
+- Dealing with empty files for ARGV. As it stands the console will hang if no file provided
+- Better testing coverage. Due to time constrains I only selected a few tests, but I am aware there 
+  could be other cases as if the file is empty ex. among other ones.
+  the reader class tests were left blank as well due to the complexity and time of implementing a way
+  to mock a STDIN call so ARGV could open a file.
+- Probably expand the reader file into other readers and encapsulating them into their own class, 
+  like CSV reader, or other files! 
+- Perhaps ask the user for an integer input on how many word sequence they want! Then have the program 
+  parse the file with the correct amount of words or even how many they wanted displayed into the console.
+- Perhaps implementing FactoryBot, or Fixtures of data to make tests cleaner and easier to read/mantain.
