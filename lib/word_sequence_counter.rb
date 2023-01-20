@@ -29,4 +29,4 @@ class WordSequenceCounter
   end
 end
 
-WordSequenceCounter.new.count_text_sequences
+# WordSequenceCounter.new.count_text_sequences

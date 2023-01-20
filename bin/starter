@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/word_sequence_counter.rb'
+
+WordSequenceCounter.new.count_text_sequences
