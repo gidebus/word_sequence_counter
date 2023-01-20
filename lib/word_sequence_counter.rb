@@ -28,5 +28,3 @@ class WordSequenceCounter
     puts "Speed: #{ending - start} seconds"
   end
 end
-
-# WordSequenceCounter.new.count_text_sequences

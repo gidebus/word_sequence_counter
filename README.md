@@ -1,7 +1,7 @@
 # Word Sequence Counter 
 
 ## Project Description
-Word Sequence Counter is a CLI program that takes one or more txt files as input and prints
+Word Sequence Counter is a CLI program that takes one or more `txt` files as input and prints
 the 100 most common words repeated across the text(s) in a 3 word sequence. 
 
 Ex. 
@@ -18,25 +18,25 @@ Ex.
 There are 3 main ways to run the program through the CLI while in the program directory. Please keep in mind
 that file path will vary depending on where you are calling the file and its inputs from:
 
-1. Run it with one or more file arguments.
+1. Run it with one or more file arguments:
 ```
-ruby ./lib/word_sequence_counter.rb some_txt_file.txt another_txt_file.txt
+ruby ./bin/starter some_txt_file.txt another_txt_file.txt
 ```
 
-2. Pipe the file into the program
+2. Pipe the file into the program:
 ```
-ruby ./lib/word_sequence_counter.rb < some_txt_file.txt
+ruby ./bin/starter < some_txt_file.txt
 ```
     
-3. cat into the program
+3. `cat` into the program:
 ```
-cat ./text_files/moby-dick.txt | ruby ./lib/word_sequence_counter.rb
+cat ./text_files/moby-dick.txt | ruby ./bin/starter
 ```
 
 ## Running Tests
 
   Tests are written in `RSPEC` to run them run the following command from the main program directory:
-  `rsec`
+  `rpsec`
 
   or the following for individual test suites:
   `rspec spec/some_spec.rb`
@@ -47,6 +47,10 @@ cat ./text_files/moby-dick.txt | ruby ./lib/word_sequence_counter.rb
 The program attempts to follow a loosely coupled object oriented style, utilizing dependancy injection on classes
 when needed. Each class was written trying to accomplish the single responsibility principle, and kept as readable
 as possible.
+
+#### `starter`
+This executable file is the one in charge of running the program. It will call and instantiate the 
+`WordSequenceCounter` class. 
 
 #### `word_sequence_counter.rb`
 This file contains the class that controls the flow of the program. It initializes all classes with the 
@@ -63,7 +67,7 @@ into another data structure of choice.
 
 ##### Limitations
 There are no methods rescuing lack of incorrect command calls, etc.
-It treats title, index, and other non-essential data as part of the file
+It also treats title, index, and other non-essential data as part of the file.
 
 ##### Future Ideas
 For future work this class could be split into more classes and have a reader for other types of files. Ex. `CSV` etc.
@@ -77,7 +81,7 @@ This contains the `Parser` class that uses `RegEx` to handle the requirements fo
 lower case letters, and two versions of apostrophes will be turned into a space, and subsequently removed by using the `.split` method.
 
 ##### Limitations
-Limitatations of these are that words that contain a `-` will be split. Also by ignoring punctuation, we have other odd cases in which words
+Limitations of these are that words that contain a `-` will be split. Also by ignoring punctuation, we have other odd cases in which words
 like `www.some_page.com` will be split into `['www', 'some_page', 'com']`. 
 
 ##### Future Ideas 
@@ -154,11 +158,11 @@ The `Reader` test suite was skipped due to complexity. I somehow had to mock a c
 I left the test as 'skipped' to show intent of completion, and perhaps initial thought process.
 
 ### Final Thoughts
-Thank for sticking with me through this README. It was lengthy but wanted to share thought process for limitations and future potential work if had more time
+Thanks for sticking with me through this README. It was lengthy but wanted to share thought process for limitations and future potential work if had more time
 as much as possible.
 
-This project also pushed me to learn new things such as testing `puts` outputs on `rspec`!, use of `ARGF` versus `ARGV`!, as well as the sole purpose
-of getting more practice on object oriented programming. It also helped me notice some points of improvements such as development speed, or certain topics
+This project also pushed me to learn new things such as testing `puts` outputs on `rspec`, use of `ARGF` versus `ARGV`!, as well as the sole purpose
+of getting more practice on object oriented programming. It also helped me notice some personal points of improvement such as development speed, or certain topics
 of general development.
 
 Feel free to reach out to me for any questions and thank you for your consideration!
