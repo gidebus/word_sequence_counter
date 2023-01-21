@@ -135,7 +135,7 @@ I believe this class was not needed as we are returning the values already into 
 for the user.
 
 ##### Future Ideas
-Future work could be somehow pass down the title for the txt class and print it at the top.
+Future work could be somehow pass down the title of the txt file from the `Reader` class and print it at the top.
 
 ### Test files
 As a general upgrade to my testing suite. I would have added tools such as `FactoryBot` or `Fixture` to contain mock data to make the tests cleaner.
