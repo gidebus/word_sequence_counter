@@ -154,14 +154,14 @@ printing values not in the array, and then printing the same value in an array t
 contain less than 100 values.
 
 #### `reader_spec.rb`
-The `Reader` test suite was skipped due to complexity. I somehow had to mock a call to and instance of STDOUT so that ARGV could pick the file path. 
+The `Reader` test suite was skipped due to complexity. I somehow had to mock a call to and instance of `STDOUT` so that `ARGV` could pick the file path. 
 I left the test as 'skipped' to show intent of completion, and perhaps initial thought process.
 
 ### Final Thoughts
 Thanks for sticking with me through this README. It was lengthy but wanted to share thought process for limitations and future potential work if had more time
 as much as possible.
 
-This project also pushed me to learn new things such as testing `puts` outputs on `rspec`, use of `ARGF` versus `ARGV`!, as well as the sole purpose
+This project also pushed me to learn new things such as testing `puts` outputs on `rspec`, use of `ARGF` versus `ARGV`! as well as the sole purpose
 of getting more practice on object oriented programming. It also helped me notice some personal points of improvement such as development speed, or certain topics
 of general development.
 
