@@ -165,6 +165,4 @@ This project also pushed me to learn new things such as testing `puts` outputs o
 of getting more practice on object oriented programming. It also helped me notice some personal points of improvement such as development speed, or certain topics
 of general development.
 
-Feel free to reach out to me for any questions and thank you for your consideration!
-
 Gil
